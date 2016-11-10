@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	
+		<!-- Basic -->
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+	
+		<!-- Mobile Metas -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	    <!-- start: CSS file-->
+
+		<!-- Vendor CSS-->
+		<link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="../static/vendor/skycons/css/skycons.css" rel="stylesheet" />
+		<link href="../static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+		<!-- Theme CSS -->
+		<link href="../static/css/jquery.mmenu.css" rel="stylesheet" />
+
+		<!-- Page CSS -->
+		<link href="../static/css/style.css" rel="stylesheet" />
+		<link href="../static/css/add-ons.min.css" rel="stylesheet" />
+
+		<style>
+			footer {
+				display: none;
+			}
+		</style>
+
+		<!-- end: CSS file-->
+
+
+		<!-- Head Libs -->
+		<script type="text/JavaScript" src="../static/js/jquery-3.1.1.min.js"></script>
+		<script src="../static/js/jsencrypt.min.js"></script>
+
+
+	</head>
+
+	<body>
+		<!-- Start: Content -->
+		<div class="container-fluid content">
+			<div class="row">
+				<!-- Main Page -->
+				<div id="content" class="col-sm-12 full">
+					<div class="row">
+						<div class="login-box">
+							<div class="panel">
+								<div class="panel-body">
+									<div class="header bk-margin-bottom-20 text-center">
+										<h4>&nbsp</h4>
+										<h4>Log In</h4>
+									</div>
+									<form class="form-horizontal login">
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<div class="form-group">
+												<label>Username</label>
+												<div class="input-group input-group-icon">
+													<input type="text" class="form-control bk-radius" name="username" id="username"/>
+												</div>
+											</div>
+											<div class="form-group">
+												<label>Password</label>
+												<div class="input-group input-group-icon">
+													<input type="password" class="form-control bk-radius" name="password" id="password"/>
+												</div>
+												<div class="input-group input-group-icon">
+													<p name="message" id="message"></p>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="input-group input-group-icon">
+													<a name="toregister" onclick="f1()" id="toregister" color="col-lg-12">Click here to register your account</a>
+												</div>
+												<script type="text/javascript">
+													function f1(){
+														window.location.href = "http://localhost:8888/register"
+													}
+												</script>
+											</div>
+											<div class="row bk-margin-top-20 bk-margin-bottom-10">
+												<div class="col-sm-4 text-right">
+													<button id="btnsubmit" onclick="return f()" class="btn btn-primary hidden-xs">Log In</button>
+												</div>
+												<script type="text/javascript">
+													function f(){
+														var crypt = new JSEncrypt();//用于加密
+														crypt.setPublicKey("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCo7y1fJgzw6ru3cE4TY4kIDAXSP5HYye6JfHKp2grSVgv3KS42VZpRiTM/QKopjth+sS1P4kSZf44JNbpfiYC2wxOYIekHblKSHJ/aAekxXAIINXK7j7QmsplSiuWPwxr9KARjLEBGGLgJbcvaW+7xTVGE0KxjPKWym9ebWFvACwIDAQAB");
+
+														var decrypt = new JSEncrypt();//用于解密
+														decrypt.setPrivateKey("MIICXQIBAAKBgQCo7y1fJgzw6ru3cE4TY4kIDAXSP5HYye6JfHKp2grSVgv3KS42VZpRiTM/QKopjth+sS1P4kSZf44JNbpfiYC2wxOYIekHblKSHJ/aAekxXAIINXK7j7QmsplSiuWPwxr9KARjLEBGGLgJbcvaW+7xTVGE0KxjPKWym9ebWFvACwIDAQABAoGBAIKant4/waOEJmpUZdgxjKBvAxUf1nbe7w7V6qQMEW+53HhSGwsgtTSyOK9/I88LQ6729Ywb52MwrTPLmPIBkUL5Dx9irNszxWlS/7M0KMYNg2TrOTOjYxRjAkFpOVPKnSkEmdCCcvkLKQmpfckAnUb6EzKsdF8zeKXKkt+ZGaZpAkEA0cx5JjrKtafiJ8arR/yWE6aaxry4ihUGYK2II+vELSO+/yF+aiK8s+kDIwUzxUw8VXMJD/HI0WvKkGz4xEVvBQJBAM4i8n2wE7OBRAFvLEV7b/myLvbNVyEswbwjem6uqwg+5o8YngfZUa7jtKy/p8tByPRcl6zd7sXUhQhi/Vft/88CQFJM4RWjKJQcWLZ71AM4TfNFfyAJNmdMmiTgzjAxM9L1W96f2ARwvg/hj450Yvu5zU1EBEER+1JT87G2Xdw41LUCQQCBq4Yy/nJGNwiahl6pDq8vuaDFbAJlQgxU11SLD6FTPI44cdnnQhOaGm9rQ9y/hZBt91kKS0mKdNeCoRKRH4wNAkBD/8PjDe7sQQsjqrHQudl+fzC4ufnpHOBVT/PgDLZ+iQ9vladT8z0SJbEUO9y2YJjB75akH6heFB72pdn3pB36");
+														console.log("login")
+														var data = {
+															data: JSON.stringify({
+																"username": $("#username").val(),
+																"password": crypt.encrypt($("#password").val())
+															})
+														};
+														$.ajax({
+															type: "post",
+															url: 'http://localhost:8888/login',
+															data: data,
+															success: function f1(data) {
+                                                                console.log("返回数据为："+ data)
+                                                                if(JSON.parse(data) == "Username not exist"){
+                                                                    document.getElementById("message").innerHTML = JSON.parse(data);
+                                                                    setTimeout('delayer()',2000);
+                                                                }else {
+                                                                    var password_decrypt = decrypt.decrypt(JSON.parse(data)[1]);
+																    if( password_decrypt == $("#password").val()){
+																	    document.cookie='login';
+																	    window.location.href = "http://localhost:8888/";
+																    }else {
+																	    document.getElementById("message").innerHTML = "wrong password";
+																	    setTimeout('delayer()',2000);
+																    }
+                                                                }
+															},
+															error: function(data){
+																console.log("Fail to return data")
+															}
+														});
+														return false
+													}
+													/*$("#btnsubmit").click(function(){
+														console.log("123")
+														var data={
+															data: JSON.stringify({"username":$('#username').val(), "password": $('#password').val()})
+														}
+														console.log(data)
+														$.ajax({
+															type: "post",
+															url: 'http://localhost:8888/login',
+															data: data,
+															success: function (data) {
+																console.log("456")
+																document.getElementById("message").innerHTML = "aaa";
+																if (data != "") {
+																	document.getElementById("message").innerHTML = data;
+																}
+															},
+															error: function(data){
+																console.log("789")
+															}
+														});
+													});*/
+												function delayer() {
+													window.location.href = "http://localhost:8888/login";
+												}
+												</script>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Main Page -->
+			</div>
+		</div><!--/container-->
+
+
+	</body>
+	
+</html>
